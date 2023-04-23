@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: argocd-cm
+  name: shubham-cm
 data:
   resource.exclusions: |
     - apiGroups:
@@ -10,3 +10,4 @@ data:
       - CiliumIdentity
       clusters:
       - "*"
+  application.resourceTrackingMethod: annotation

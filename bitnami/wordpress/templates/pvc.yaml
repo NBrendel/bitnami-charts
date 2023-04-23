@@ -28,9 +28,8 @@ spec:
   {{- end }}
   resources:
     requests:
-      storage: 1Gi
-#      storage: {{ .Values.persistence.size | quote }}
-#  {{- include "common.storage.class" (dict "persistence" .Values.persistence "global" .Values.global) | nindent 2 }}
+      storage: {{ .Values.persistence.size | quote }}
+  {{- include "common.storage.class" (dict "persistence" .Values.persistence "global" .Values.global) | nindent 2 }}
   {{- if .Values.persistence.dataSource }}
   dataSource: {{- include "common.tplvalues.render" (dict "value" .Values.persistence.dataSource "context" $) | nindent 4 }}
   {{- end }}
